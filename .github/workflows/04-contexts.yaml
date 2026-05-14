@@ -26,3 +26,7 @@ jobs:
         run: |
           echo "DB Username: ${{ secrets.DB_USER }}"
           echo "DB Password: ${{ secrets.DB_PASSWORD }}"
+
+      - name: Print variables
+        run: |
+          echo "DB URL: ${{ vars.DB_URL }}"
