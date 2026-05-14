@@ -1,9 +1,17 @@
 name: Triggers
 on: 
-  push:
+  # If someone opens Pull Request (PR) to main branch
+  pull_request:
+    types: [opened, reopened]
     branches:
-      - 'main'
+      - 'releases/**'
+
+  # push:
+  #   branches:
+  #     - 'main'
+
   # workflow_dispatch
+
   # [push]                            # Triggers the workflow on every push to the repository
 
 jobs:
