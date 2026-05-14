@@ -1,5 +1,9 @@
 name: Triggers
-on: workflow_dispatch
+on: 
+  push:
+    branches:
+      - 'feature*'
+  # workflow_dispatch
   # [push]                            # Triggers the workflow on every push to the repository
 
 jobs:
@@ -7,5 +11,7 @@ jobs:
   trigger:
     runs-on: ubuntu-latest            # Github hosted runners
     steps:
-      - name: Manual dispatch
-        run: echo "Manually dispatched"     # The command to execute
+      # - name: Manual dispatch
+      #   run: echo "Manually dispatched"     # The command to execute
+      - name: Feature branch push
+        run: echo "Pushed to feature branch"     # The command to execute
