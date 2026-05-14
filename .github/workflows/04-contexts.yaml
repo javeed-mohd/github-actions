@@ -7,4 +7,6 @@ jobs:
     runs-on: ubuntu-latest            # Github hosted runners
     steps:
       - name: Print info
-        run: echo "${{ toJson(github) }}"     # The command to execute
+        run: |
+          echo "${{ toJson(github) }}"
+          echo "Branch name: ${{ github.ref_name }}"
