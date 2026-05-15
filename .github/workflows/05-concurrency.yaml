@@ -1,7 +1,7 @@
 name: main-workflow
 on: [push]                            # Triggers the workflow on every push to the repository
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref_name }}     # main-workflow-main
+  group: ${{ github.workflow }}-${{ github.ref_name }}      # main-workflow-main
   cancel-in-progress: true            # If true, present execution will be cancelled and new trigger will happen
 
 jobs:
