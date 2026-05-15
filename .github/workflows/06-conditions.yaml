@@ -1,0 +1,15 @@
+name: Conditions demo
+on: [push]                            # Triggers the workflow on every push to the repository
+
+jobs:
+  # Job name
+  say-hello:
+    runs-on: ubuntu-latest            # Github hosted runners
+    steps:
+      - name: Main branch
+        if: github.ref_name == 'main'
+        run: echo "This will be executed, if branch is main"     # The command to execute
+
+      - name: Feature branch
+        if: github.ref_name == 'feature-*'
+        run: echo "This will be executed, if branch is feature"     # The command to execute
