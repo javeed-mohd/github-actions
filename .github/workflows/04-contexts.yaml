@@ -54,3 +54,13 @@ jobs:
         run: |
           echo "Course: $Course"
           echo "Duration: $Duration"
+
+  # Job name
+  deploy:
+    needs: github-context
+    runs-on: ubuntu-latest            # Github hosted runners
+    steps:
+      - name: Print github env in another job
+        run: |
+          echo "Course: $Course"
+          echo "Duration: $Duration"
